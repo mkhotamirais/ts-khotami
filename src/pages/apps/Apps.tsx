@@ -1,10 +1,11 @@
-import PedroTodo from "./pedro-todo/PedroTodo";
+import { Outlet } from "react-router-dom";
+import { Title } from "../../components/Components";
 
 export default function Apps() {
   return (
     <div>
-      Apps
-      <PedroTodo />
+      <Title>Apps</Title>
+      <Outlet />
     </div>
   );
 }

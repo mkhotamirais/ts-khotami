@@ -1,13 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// type tInitialState = {
-//   dark: boolean;
-// };
-
 const storedDark = localStorage.getItem("tskhotamiBasic");
 const initialState = {
   dark: storedDark !== null ? JSON.parse(storedDark) : false,
   openNav: false,
+  openAside: false,
 };
 
 const basicSlice = createSlice({
@@ -26,8 +23,14 @@ const basicSlice = createSlice({
     removeOpenNav(state) {
       state.openNav = false;
     },
+    toggleOpenAside(state) {
+      state.openAside = !state.openAside;
+    },
+    removeOpenAside(state) {
+      state.openAside = false;
+    },
   },
 });
 
-export const { toggleDark, removeDark, toggleOpenNav, removeOpenNav } = basicSlice.actions;
+export const { toggleDark, removeDark, toggleOpenNav, removeOpenNav, toggleOpenAside, removeOpenAside } = basicSlice.actions;
 export default basicSlice.reducer;

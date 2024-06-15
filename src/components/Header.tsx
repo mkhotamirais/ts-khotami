@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { FaSun, FaMoon, FaGithub, FaBars, FaXmark } from "react-icons/fa6";
-import { toggleDark, toggleOpenNav } from "../app/features/basicSlice";
+import { removeOpenAside, removeOpenNav, toggleDark, toggleOpenNav } from "../app/features/basicSlice";
 import { AppDispatch, RootState } from "../app/store";
 import { tClassName } from "./Types";
 
@@ -12,9 +12,10 @@ const navMenus = [
 ];
 
 export default function Header() {
+  const { dark } = useSelector((state: RootState) => state.basic);
   return (
     <>
-      <header className="px-3 h-16 lg:px-12 sticky top-0 border-b shadow">
+      <header className={`z-40 ${dark ? "bg-slate-800" : "bg-white"} px-3 h-16 lg:px-12 sticky top-0 border-b shadow`}>
         <div className="flex h-full justify-between items-center gap-4">
           <div>Logo</div>
           <Nav />
@@ -31,17 +32,18 @@ export default function Header() {
 }
 
 function NavBtn() {
-  const { openNav } = useSelector((state: RootState) => state.basic);
+  const { openNav, openAside } = useSelector((state: RootState) => state.basic);
   const dispatch = useDispatch();
   const handleClick = () => {
     dispatch(toggleOpenNav());
+    if (openAside) dispatch(removeOpenAside());
   };
   return (
     <button
       type="button"
       onClick={handleClick}
       aria-label="toggle openNav"
-      className={`${openNav ? "rotate-180" : ""} text-xl transition-all duration-150`}
+      className={`block sm:hidden ${openNav ? "rotate-180" : ""} text-xl transition-all duration-150`}
     >
       {openNav ? <FaXmark /> : <FaBars />}
     </button>
@@ -49,8 +51,12 @@ function NavBtn() {
 }
 
 function NavContent({ className }: tClassName) {
+  const dispatch = useDispatch();
+  const handleClick = () => {
+    dispatch(removeOpenNav());
+  };
   return navMenus.map((item, i) => (
-    <NavLink key={i} to={item.href} className={`${className} hover:text-cyan-500`}>
+    <NavLink onClick={handleClick} key={i} to={item.href} className={`${className} hover:text-cyan-500`}>
       {item.text}
     </NavLink>
   ));
