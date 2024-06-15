@@ -13,18 +13,18 @@ export default function Lesson2() {
   );
 }
 
-type User = { name: string; age: number };
+// type User = { name: string; age: number };
 function Les5() {
   // const [count, setCount] = useState<number>(0) // tipe (number) tidak perlu ditulis
   // const [text, setText] = useState('teks') // begitupun tipe data primitif lainnya
   // beda ceritanya engan objek;
-  const [data, setData] = useState<User | null>(null);
-  const name = data?.name;
+  // const [data, setData] = useState<User | null>(null);
+  // const name = data?.name;
 
   return (
     <div className="border rounded p-2">
       Lesson5: hooks: useState
-      <div>name: {name}</div>
+      {/* <div>name: {name}</div> */}
     </div>
   );
 }
