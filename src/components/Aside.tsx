@@ -12,8 +12,12 @@ const asideAppsMenus = [
 ];
 
 const asideLessonsMenus = [
-  { text: "lesson1", href: "/lessons/lesson1" },
-  { text: "lesson2", href: "/lessons/lesson2" },
+  { text: "lesson1: byteGrad", href: "/lessons/lesson1" },
+  { text: "lesson2: byteGrad", href: "/lessons/lesson2" },
+  { text: "lesson3: codeVolution", href: "/lessons/lesson3" },
+  { text: "lesson4: codeVolution", href: "/lessons/lesson4" },
+  { text: "lesson5: codeVolution", href: "/lessons/lesson5" },
+  { text: "lesson6: codeVolution", href: "/lessons/lesson6" },
 ];
 
 export function AsideBtn() {

@@ -12,6 +12,10 @@ import WdsCart from "./pages/apps/wds-cart/WdsCart.tsx";
 import Lessons from "./pages/lessons/Lessons.tsx";
 import Lesson1 from "./pages/lessons/Lesson1.tsx";
 import Lesson2 from "./pages/lessons/Lesson2.tsx";
+import Lesson3 from "./pages/lessons/Lesson3.tsx";
+import Lesson4 from "./pages/lessons/Lesson4.tsx";
+import Lesson5 from "./pages/lessons/Lesson5.tsx";
+import Lesson6 from "./pages/lessons/Lesson6.tsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,6 +31,10 @@ const router = createBrowserRouter(
         <Route index element={<Lesson1 />} />
         <Route path="lesson1" element={<Lesson1 />} />
         <Route path="lesson2" element={<Lesson2 />} />
+        <Route path="lesson3" element={<Lesson3 />} />
+        <Route path="lesson4" element={<Lesson4 />} />
+        <Route path="lesson5" element={<Lesson5 />} />
+        <Route path="lesson6" element={<Lesson6 />} />
       </Route>
     </Route>
   )

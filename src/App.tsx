@@ -12,7 +12,6 @@ export default function App() {
   const { path } = usePath();
   const dispatch = useDispatch();
   const handleMain = () => {
-    console.log("halo");
     if (openNav) dispatch(removeOpenNav());
     if (openAside) dispatch(removeOpenAside());
   };
