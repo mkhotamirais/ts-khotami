@@ -16,6 +16,7 @@ import Lesson3 from "./pages/lessons/Lesson3.tsx";
 import Lesson4 from "./pages/lessons/Lesson4.tsx";
 import Lesson5 from "./pages/lessons/Lesson5.tsx";
 import Lesson6 from "./pages/lessons/Lesson6.tsx";
+import Lesson7 from "./pages/lessons/Lesson7.tsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -35,6 +36,7 @@ const router = createBrowserRouter(
         <Route path="lesson4" element={<Lesson4 />} />
         <Route path="lesson5" element={<Lesson5 />} />
         <Route path="lesson6" element={<Lesson6 />} />
+        <Route path="lesson7" element={<Lesson7 />} />
       </Route>
     </Route>
   )
