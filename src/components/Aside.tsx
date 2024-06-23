@@ -19,6 +19,7 @@ const asideLessonsMenus = [
   { text: "lesson5: codeVolution", href: "/lessons/lesson5" },
   { text: "lesson6: codeVolution", href: "/lessons/lesson6" },
   { text: "lesson7: codeVolution", href: "/lessons/lesson7" },
+  { text: "lesson8: zustand", href: "/lessons/lesson8" },
 ];
 
 export function AsideBtn() {
